@@ -25,6 +25,15 @@
                     <a class="dropdown-item" href = {% url 'sales:live_list' %}>판매 티켓 판매 조회</a>
                 </div>
             </div>
+            <a style="width:5px; border-right:1px solid grey; margin-right:4px;"></a>
+            <div class = "dropdown">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">테이블</button>
+                <div class = "dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href = {% url 'sales:table' "sales_product" %}>sales_product(티켓)</a>
+                    <a class="dropdown-item" href = {% url 'sales:table' "sales_sales" %}>sales_sales(판매)</a>
+                    <a class="dropdown-item" href = {% url 'sales:table' "sales_log" %}>sales_log(티켓 히스토리)</a>
+                </div>
+            </div>
         </ul>
     </div>
 </nav>

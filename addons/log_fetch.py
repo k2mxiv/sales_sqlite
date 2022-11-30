@@ -36,6 +36,15 @@ def researchTeamCalc(sel = None) :
     rerult = [val, colNam]
     return rerult
 
+def table_desc(table_name) :
+    sql = f"PRAGMA table_info({table_name});"
+    col = [list(i) for i in servConnect('fetch', sql)]
+    colNam = [i[1] for i in col]
+    sql = f"select * from {table_name}"
+    row = [list(i) for i in servConnect('fetch', sql)]
+    print("columns : ",col, "\nrows : ", row)
+    return [colNam, row]
+
 class accountingAnd :
     def __init__(self) :
         None

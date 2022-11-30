@@ -13,5 +13,6 @@ urlpatterns = [
     path('sales/full_list/', views.full_history, name = 'full_list'),
     path('sales/delete_list/', views.delete_history, name = 'delete_list'),
     path('sales/live_list/', views.live_history, name = 'live_list'),
+    path('sales/table/<table_name>', views.table, name = 'table'),
     path('sales/media/<img_str>', views.img_dir, name = 'media'),
 ]

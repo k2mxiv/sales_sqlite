@@ -10,7 +10,7 @@ from .forms import ProductForm
 from .forms import SalesForm
 from django.db.models import Q
 from addons.log_fetch import accountingAnd
-
+from addons.log_fetch import table_desc
 
 # Create your views here.
 
@@ -123,8 +123,10 @@ def live_history(request) :
     return render(request, 'sales/sales_live_list.html', context)
 
 def img_dir(request, img_str = '') :
-    print("!@#!@$!#%", request)
-    print(img_str)
     context = {'img_str' : img_str}
     return render(request, 'img_print.html', context)
 
+def table(request, table_name = '') :
+    table = table_desc(table_name)
+    context = {"columns" : table[0], "rows" : table[1]}
+    return render(request, "sales/table_print.html", context)
